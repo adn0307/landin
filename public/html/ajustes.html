@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SaferTech — Ajustes</title>
+    <link rel="stylesheet" href="/public/assets/styles/ajustes.css">
+</head>
+
+<body>
+<div class="app">
+
+    <!-- ───────────────────────── SIDEBAR ───────────────────────── -->
+    <aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-top">
+        
+        <!-- TÍTULO EN VEZ DEL LOGO -->
+       <h2 class="sidebar-title">
+    <span class="sidebar-icon">⚙️</span> Ajustes </h2>
+
+
+        <!-- OPCIONES -->
+        <button class="menu-item">
+            <span class="icon">👤</span>
+            <span class="label">Cuenta</span>
+        </button>
+
+        <button class="menu-item">
+            <span class="icon">🎨</span>
+            <span class="label">Personalización</span>
+        </button>
+
+        <button class="menu-item">
+            <span class="icon">🔔</span>
+            <span class="label">Notificaciones</span>
+        </button>
+
+        <button class="menu-item">
+            <span class="icon">❓</span>
+            <span class="label">Ayuda y Comentarios</span>
+        </button>
+    </div>
+
+    <!-- USER INFO ABAJO -->
+    <div class="sidebar-bottom">
+        <div class="user-box" id="userBox">
+            <span class="user-icon">👤</span>
+            <span class="user-name" id="sidebarUser">admin1</span>
+        </div>
+
+        <!-- Popup logout -->
+        <div id="userMenu" class="user-menu" aria-hidden="true">
+            <button id="logoutBtn" class="user-menu-item">Cerrar sesión</button>
+        </div>
+    </div>
+
+</aside>
+
+    <!-- ───────────────────────── MAIN CONTENT ───────────────────────── -->
+    <main class="main">
+        <header class="main-header">
+            <button id="hamburger" class="hamburger">☰</button>
+        </header>
+
+        <section class="settings-content">
+            <h2 class="big-title">SaferTech</h2>
+
+            <h3 class="subtitle">¿En qué puedo ayudarte hoy?</h3>
+
+            <div class="quick-buttons">
+                <button class="pill">Analizar código</button>
+                <button class="pill">Comparar código</button>
+                <button class="pill">Traducir código</button>
+            </div>
+
+            <div class="search-bar">
+                <span class="plus">＋</span>
+                <input type="text" placeholder="Escribe lo que necesitas...">
+            </div>
+
+            <div class="response-box" id="responseBox">
+              <p id="responseText">Aquí aparecerá el resultado…</p>
+            </div>
+
+        </section>
+    </main>
+</div>
+
+<script src="/public/assets/scripts/ajustes.js"></script>
+</body>
+</html>

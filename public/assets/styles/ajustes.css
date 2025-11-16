@@ -1,0 +1,247 @@
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Arial,sans-serif}
+
+:root{
+    --bg:#05345c;
+    --sidebar:#03243f;
+    --muted:#cfe6ff;
+    --accent:#3b84ff;
+}
+
+body{
+    background:var(--bg);
+    color:white;
+    height:100vh;
+    overflow:hidden;
+}
+
+.app{
+    display:flex;
+    height:100vh;
+}
+
+/* ───────────────────────── SIDEBAR ───────────────────────── */
+
+.sidebar{
+    width:300px;
+    background:var(--sidebar);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    padding:28px 22px;
+    transition:transform .25s ease;
+    z-index:50;
+}
+
+.sidebar-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 10px;
+
+    /* DESPLAZAR 2CM A LA IZQUIERDA */
+    margin-left: -0.5cm;
+}
+
+.sidebar-icon {
+    font-size: 28px;
+}
+
+/* menu items */
+.menu-item{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    background:none;
+    border:none;
+    color:#e6f3ff;
+    font-size:17px;
+    padding:12px 8px;
+    width:100%;
+    border-radius:8px;
+    cursor:pointer;
+}
+.menu-item:hover{
+    background:rgba(255,255,255,0.08);
+}
+
+.menu-item .icon{
+    width:26px;
+    opacity:0.8;
+}
+
+/* user bottom */
+.sidebar-bottom{ margin-top:auto; position:relative; }
+
+.user-box{
+    display:flex;
+    gap:10px;
+    padding:12px;
+    background:rgba(255,255,255,0.08);
+    border-radius:20px;
+    cursor:pointer;
+    align-items:center;
+}
+
+.user-name{ font-size:14px; }
+
+/* popup menu */
+.user-menu{
+    position:absolute;
+    left:22px;
+    bottom:70px;
+    background:rgba(0,0,0,0.75);
+    backdrop-filter:blur(6px);
+    color:white;
+    padding:6px;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,0.06);
+    display:none;
+}
+.user-menu[aria-hidden="false"]{
+    display:block;
+}
+.user-menu-item{
+    background:none;
+    border:none;
+    color:white;
+    padding:10px 12px;
+    width:100%;
+    text-align:left;
+    cursor:pointer;
+    border-radius:6px;
+}
+.user-menu-item:hover{
+    background:rgba(255,255,255,0.04);
+}
+
+/* ───────────────────────── MAIN ───────────────────────── */
+
+.main{
+    flex:1;
+    padding:40px 50px;
+    overflow-y:auto;
+}
+
+.main-header{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.hamburger{
+    display:none;
+    font-size:26px;
+    background:none;
+    border:none;
+    color:white;
+    cursor:pointer;
+}
+
+.title{
+    font-size:40px;
+    font-weight:700;
+}
+
+/* Content */
+
+.big-title{
+    font-size:48px;
+    text-align:center;
+    margin-top:20px;
+    font-weight:700;
+}
+
+.subtitle{
+    font-size:28px;
+    text-align:center;
+    margin-top:10px;
+    margin-bottom:40px;
+}
+
+.quick-buttons{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+}
+
+.pill{
+    background:white;
+    color:black;
+    border:none;
+    padding:10px 18px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+.search-bar{
+    margin:60px auto 0 auto;
+    background:white;
+    width:70%;
+    display:flex;
+    align-items:center;
+    padding:12px 16px;
+    border-radius:40px;
+    gap:10px;
+}
+.search-bar input{
+    border:none;
+    flex:1;
+    font-size:16px;
+}
+.plus{
+    font-size:20px;
+    color:#444;
+}
+
+/* ─────────── RESPONSIVE ─────────── */
+
+@media(max-width:760px){
+    .sidebar{
+        position:fixed;
+        left:0;top:0;bottom:0;
+        transform:translateX(-110%);
+        width:260px;
+        box-shadow:6px 0 30px rgba(0,0,0,0.4);
+    }
+    .sidebar.open{
+        transform:translateX(0);
+    }
+
+    .hamburger{ display:block; }
+
+    .main{
+        padding:20px;
+    }
+
+    .big-title{ font-size:32px; }
+    .subtitle{ font-size:20px; }
+    .search-bar{ width:100%; }
+}
+
+/* CUADRO DE RESPUESTA */
+.response-box{
+    width:70%;
+    margin:30px auto;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    padding:20px 25px;
+    border-radius:18px;
+    color:white;
+    font-size:16px;
+    backdrop-filter:blur(4px);
+    display:none; /* Oculto hasta que haya respuesta */
+}
+
+.response-box p{
+    white-space:pre-wrap;
+    line-height:1.5;
+}
+
