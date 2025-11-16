@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="/public/assets/styles/login.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="title">Iniciar Sesión</h1>
+
+        <form id="loginForm" autocomplete="off">
+
+            <label class="label">Usuario</label>
+            <input type="text" id="nombre" placeholder="Ingresa tu usuario">
+
+            <label class="label">Contraseña</label>
+            <input type="password" id="contrasena" placeholder="Ingresa tu contraseña">
+
+            <div id="errores"></div>
+
+            <button class="btn-login" type="submit">Ingresar</button>
+
+        </form>
+
+        <p class="forgot">¿Olvidaste tu contraseña?</p>
+
+        <div class="divider"><span>o</span></div>
+
+        <div class="social">
+           <button id="btnGoogle" type="button">
+             <img src="/public/assets/img/googlelogo.png"> Google
+           </button>
+           <button id="btnApple" type="button">
+             <img src="/public/assets/img/applelogo.png"> Apple
+           </button>
+        </div>
+
+        <p class="register">¿No tienes una cuenta? <a href="registro.html">Regístrate aquí</a></p>
+
+    </div>
+
+    <script src="/public/assets/scripts/login.js"></script>
+</body>
+</html>

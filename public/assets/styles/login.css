@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Fondo con tu imagen */
+body {
+    background: url("/public/assets/img/fondoregistro.png") no-repeat center center fixed;
+    background-size: cover;
+
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white;
+}
+
+.container {
+    width: 420px;
+    max-width: 100%;
+    text-align: center;
+}
+
+/* TITULO MÁS A LA IZQUIERDA */
+.title {
+    font-size: 46px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    text-align: left;
+    margin-left: -5px; /* Ajustado más a la izquierda */
+}
+
+/* LABELS MÁS SEPARADOS DE LOS INPUTS */
+.label {
+    text-align: left;
+    margin: 22px 0 10px; /* Más separados del cuadro */
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* INPUTS */
+input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+input::placeholder {
+    color: gray;
+}
+
+/* BOTÓN */
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    background: #0286ff;
+    border: none;
+    border-radius: 40px;
+    color: white;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.forgot {
+    margin-top: 12px;
+    font-size: 14px;
+    opacity: .8;
+}
+
+.divider {
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divider span {
+    padding: 0 8px;
+    opacity: .6;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, .3);
+}
+
+/* SOCIAL */
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    background: rgba(255,255,255,.1);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+}
+
+.social img {
+    width: 20px;
+}
+
+.register {
+    margin-top: 25px;
+}
+
+.register a {
+    color: #4aa9ff;
+}
+
+/* RESPONSIVE */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .container { width: 380px; }
+    .title { font-size: 40px; }
+}
+
+/* Celulares grandes */
+@media (max-width: 768px) {
+    .container { max-width: 360px; }
+    .title { font-size: 34px; }
+}
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+    body { padding: 10px; }
+
+    .title {
+        font-size: 28px;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    input {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .btn-login {
+        padding: 12px;
+        font-size: 15px;
+    }
+}

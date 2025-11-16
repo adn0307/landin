@@ -1,6 +1,6 @@
 document.getElementById("formRegistro").addEventListener("submit", function (event) {
 
-    event.preventDefault(); // Evita que el formulario se envíe si hay errores
+    event.preventDefault(); // Evita envío si hay errores
 
     let nombre = document.getElementById("nombre").value.trim();
     let correo = document.getElementById("correo").value.trim();
@@ -26,7 +26,7 @@ document.getElementById("formRegistro").addEventListener("submit", function (eve
 
     // Mostrar errores en el HTML
     let boxErrores = document.getElementById("errores");
-    boxErrores.innerHTML = ""; // Limpia errores anteriores
+    boxErrores.innerHTML = "";
 
     if (errores.length > 0) {
         errores.forEach(function(error) {
@@ -36,11 +36,12 @@ document.getElementById("formRegistro").addEventListener("submit", function (eve
             p.style.margin = "5px 0";
             boxErrores.appendChild(p);
         });
-        return; // Detiene el envío si hay errores
+        return; // Detiene el envío
     }
 
     // Si todo está validado
     alert("Registro exitoso");
 
-    this.submit(); // Envía el formulario
+    // Redirige al login después del alert
+    window.location.href = "login.html";
 });

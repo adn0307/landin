@@ -13,15 +13,25 @@
     <div class="left">
         <h1>Crear cuenta</h1>
 
-        <form id="formRegistro">
-            <input type="text" id="nombre" placeholder="Nombre" />
-            <input type="email" id="correo" placeholder="Correo" />
-            <input type="password" id="contrasena" placeholder="Contraseña" />
+        <form id="formRegistro" autocomplete="off">
 
-            <button type="submit" class="btn">Registrarse</button>
+    <label class="label">Nombre</label>
+    <input type="text" id="nombre" placeholder="Ingresa tu nombre" autocomplete="off">
 
-            <div id="errores"></div> <!-- para mostrar mensajes -->
-        </form>
+    <label class="label">Correo</label>
+    <input type="text" id="correo" placeholder="Ingresa tu correo" autocomplete="off">
+
+    <label class="label">Contraseña</label>
+    <input 
+        type="password" 
+        id="contrasena" 
+        placeholder="Ingresa tu contraseña"
+        autocomplete="new-password">
+
+    <div id="errores"></div>
+
+    <button class="btn-login" type="submit">Registrarse</button>
+</form>
 
         <div class="separator">
             <span></span>
