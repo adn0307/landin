@@ -13,80 +13,114 @@
     <!-- ───────────────────────── SIDEBAR ───────────────────────── -->
     <aside class="sidebar" id="sidebar">
 
-    <div class="sidebar-top">
-        
-        <!-- TÍTULO EN VEZ DEL LOGO -->
-       <h2 class="sidebar-title">
-    <span class="sidebar-icon">⚙️</span> Ajustes </h2>
+        <div class="sidebar-top">
 
+            <h2 class="sidebar-title">
+                <span class="sidebar-icon">⚙️</span> Ajustes 
+            </h2>
 
-        <!-- OPCIONES -->
-        <button class="menu-item">
-            <span class="icon">👤</span>
-            <span class="label">Cuenta</span>
-        </button>
+            <!-- BOTÓN CUENTA -->
+            <button class="menu-item" id="btnCuenta">
+                <span class="icon">👤</span>
+                <span class="label">Cuenta</span>
+            </button>
 
-        <button class="menu-item">
-            <span class="icon">🎨</span>
-            <span class="label">Personalización</span>
-        </button>
+            <button class="menu-item">
+                <span class="icon">🎨</span>
+                <span class="label">Personalización</span>
+            </button>
 
-        <button class="menu-item">
-            <span class="icon">🔔</span>
-            <span class="label">Notificaciones</span>
-        </button>
+            <button class="menu-item">
+                <span class="icon">🔔</span>
+                <span class="label">Notificaciones</span>
+            </button>
 
-        <button class="menu-item">
-            <span class="icon">❓</span>
-            <span class="label">Ayuda y Comentarios</span>
-        </button>
-    </div>
-
-    <!-- USER INFO ABAJO -->
-    <div class="sidebar-bottom">
-        <div class="user-box" id="userBox">
-            <span class="user-icon">👤</span>
-            <span class="user-name" id="sidebarUser">admin1</span>
+            <button class="menu-item">
+                <span class="icon">❓</span>
+                <span class="label">Ayuda y Comentarios</span>
+            </button>
         </div>
 
-        <!-- Popup logout -->
-        <div id="userMenu" class="user-menu" aria-hidden="true">
-            <button id="logoutBtn" class="user-menu-item">Cerrar sesión</button>
+        <!-- USER INFO -->
+        <div class="sidebar-bottom">
+            <div class="user-box" id="userBox">
+                <span class="user-icon">👤</span>
+                <span class="user-name" id="sidebarUser">admin1</span>
+            </div>
+
+            <div id="userMenu" class="user-menu" aria-hidden="true">
+                <button id="logoutBtn" class="user-menu-item">Cerrar sesión</button>
+            </div>
         </div>
-    </div>
+    </aside>
 
-</aside>
-
-    <!-- ───────────────────────── MAIN CONTENT ───────────────────────── -->
+    <!-- ───────────────────────── MAIN CONTENT (CHAT + AJUSTES) ───────────────────────── -->
     <main class="main">
         <header class="main-header">
             <button id="hamburger" class="hamburger">☰</button>
         </header>
 
-        <section class="settings-content">
-            <h2 class="big-title">SaferTech</h2>
+        <!-- CHAT + CONFIG CONTENT -->
+        <div id="layout">
 
-            <h3 class="subtitle">¿En qué puedo ayudarte hoy?</h3>
+            <!-- CHAT (siempre visible en ajustes) -->
+            <section class="settings-content" id="chatBox">
+                <h2 class="big-title">SaferTech</h2>
 
-            <div class="quick-buttons">
-                <button class="pill">Analizar código</button>
-                <button class="pill">Comparar código</button>
-                <button class="pill">Traducir código</button>
-            </div>
+                <h3 class="subtitle">¿En qué puedo ayudarte hoy?</h3>
 
-            <div class="search-bar">
-                <span class="plus">＋</span>
-                <input type="text" placeholder="Escribe lo que necesitas...">
-            </div>
+                <div class="quick-buttons">
+                    <button class="pill">Analizar código</button>
+                    <button class="pill">Comparar código</button>
+                    <button class="pill">Traducir código</button>
+                </div>
 
-            <div class="response-box" id="responseBox">
-              <p id="responseText">Aquí aparecerá el resultado…</p>
-            </div>
+                <div class="search-bar">
+                    <span class="plus">＋</span>
+                    <input type="text" placeholder="Escribe lo que necesitas...">
+                </div>
 
-        </section>
+                <div class="response-box" id="responseBox">
+                    <p id="responseText">Aquí aparecerá el resultado…</p>
+                </div>
+            </section>
+
+            <!-- CONTENIDO QUE SE CAMBIA (CUENTA, ETC.) -->
+            <section id="content-area">
+                <!-- Aquí se cargará ajustes-cuenta.html -->
+            </section>
+
+        </div>
+
     </main>
 </div>
 
 <script src="/public/assets/scripts/ajustes.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const chatBox = document.getElementById("chatBox");
+    const contentArea = document.getElementById("content-area");
+    const btnCuenta = document.getElementById("btnCuenta");
+
+    // CUANDO SE PRESIONA "Cuenta"
+    btnCuenta.addEventListener("click", () => {
+
+        // ocultar chat
+        chatBox.style.display = "none";
+
+        // cargar ajustes-cuenta.html
+        fetch("/public/html/ajustes-cuenta.html")
+            .then(res => res.text())
+            .then(html => {
+                contentArea.innerHTML = html;
+            })
+            .catch(err => console.error("Error cargando ajustes-cuenta:", err));
+    });
+
+});
+</script>
+
 </body>
 </html>

@@ -1,0 +1,120 @@
+/* ======== GENERAL ======== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #033567; /* azul oscuro */
+    color: white;
+}
+
+/* Contenedor principal */
+.ajustes-container {
+    display: flex;
+    gap: 80px;
+    padding: 40px 60px;
+}
+
+/* ======== SIDEBAR IZQUIERDA ======== */
+
+.sidebar {
+    width: 280px;
+}
+
+.ajustes-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.icon-ajustes {
+    width: 45px;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* BOTONES DEL MENÚ IZQUIERDO */
+.menu-btn {
+    width: 200px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    background: white;
+    color: black;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+/* Hover (cuando pasas el mouse) */
+.menu-btn:hover {
+    background: #1a1a1a; /* gris MUY oscuro como en la imagen */
+    color: white;
+}
+
+
+/* ======== PARTE DERECHA ======== */
+
+.content {
+    flex: 1;
+}
+
+.content-title {
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Lista de opciones */
+.options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Cada opción */
+.option-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 20px;
+    border-radius: 15px;
+    background: transparent;
+    font-size: 19px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+/* Opción seleccionada (Avatar) */
+.option-item.selected {
+    padding: 18px 25px;
+    border-radius: 20px;
+}
+
+/* Iconos */
+.option-item .icon img {
+    width: 28px;
+}
+
+/* Eliminar cuenta */
+.option-item.delete {
+    color: #ff3333;
+}
+
+.option-item.delete .icon img {
+    filter: brightness(0) saturate(100%) invert(34%) sepia(90%) saturate(7478%)
+            hue-rotate(353deg) brightness(96%) contrast(112%);
+}
+
+
+
+

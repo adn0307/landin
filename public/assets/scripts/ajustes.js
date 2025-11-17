@@ -139,3 +139,39 @@ if (searchInput) {
 
 // Inicializar estado: ocultar responseBox
 hideResponse();
+
+document.getElementById("btnCuenta").addEventListener("click", function () {
+
+    // Ocultar chat
+    document.getElementById("chat-area").style.display = "none";
+
+    // Mostrar contenedor donde irá la vista de cuenta
+    const contentArea = document.getElementById("content-area");
+    contentArea.style.display = "block";
+
+    // Cargar el HTML
+    fetch("/public/ajustes-cuenta.html")
+        .then(response => response.text())
+        .then(data => {
+
+            contentArea.innerHTML = data;
+
+            // Cargar CSS si no existe
+            const cssId = "ajustesCuentaCSS";
+            if (!document.getElementById(cssId)) {
+                const link = document.createElement("link");
+                link.id = cssId;
+                link.rel = "stylesheet";
+                link.href = "/public/assets/styles/ajustes-cuenta.css";
+                document.head.appendChild(link);
+            }
+
+            // Ejecutar JS del módulo
+            const script = document.createElement("script");
+            script.src = "/public/assets/scripts/ajustes-cuenta.js";
+            document.body.appendChild(script);
+        });
+});
+
+
+
