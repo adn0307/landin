@@ -139,3 +139,18 @@ if (searchInput) {
 
 // Inicializar estado: ocultar responseBox
 hideResponse();
+
+// seleccionamos el botón de Personalización
+const personalizacionBtn = document.querySelectorAll(".menu-item")[1]; // si es el segundo botón
+
+personalizacionBtn.addEventListener("click", () => {
+    window.location.href = "personalizacion.html";
+});
+
+// ----- BOTÓN DE FLECHA VOLVER -----
+const backArrow = document.getElementById("backArrow");
+backArrow.addEventListener("click", () => {
+    window.location.href = "chatbot.html"; // puedes cambiarlo
+});
+
+
