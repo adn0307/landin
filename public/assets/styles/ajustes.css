@@ -245,4 +245,20 @@ body{
     line-height:1.5;
 }
 
+.back-arrow{
+    position:absolute;
+    top:18px;
+    left:18px;
+    background:none;
+    border:none;
+    font-size:26px;
+    color:white;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.back-arrow:hover{
+    transform:translateX(-4px);
+}
+
 

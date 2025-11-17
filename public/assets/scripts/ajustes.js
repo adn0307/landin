@@ -140,6 +140,7 @@ if (searchInput) {
 // Inicializar estado: ocultar responseBox
 hideResponse();
 
+<<<<<<< HEAD
 document.getElementById("btnCuenta").addEventListener("click", function () {
 
     // Ocultar chat
@@ -175,3 +176,19 @@ document.getElementById("btnCuenta").addEventListener("click", function () {
 
 
 
+=======
+// seleccionamos el botón de Personalización
+const personalizacionBtn = document.querySelectorAll(".menu-item")[1]; // si es el segundo botón
+
+personalizacionBtn.addEventListener("click", () => {
+    window.location.href = "personalizacion.html";
+});
+
+// ----- BOTÓN DE FLECHA VOLVER -----
+const backArrow = document.getElementById("backArrow");
+backArrow.addEventListener("click", () => {
+    window.location.href = "chatbot.html"; // puedes cambiarlo
+});
+
+
+>>>>>>> 6a19f4f15db3482e0c9b1fb17f4656ad879add25
